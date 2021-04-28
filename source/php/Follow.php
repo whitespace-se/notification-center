@@ -10,7 +10,8 @@ class Follow
         add_action('wp_ajax_follow_post_type', array($this, 'followPostType'));
         add_action('save_post', array($this, 'addFollowerMeta'), 10, 3);
         add_action('Municipio/blog/post_info', array($this, 'postFollowButton'), 9, 1);
-        add_filter('accessibility_items', array($this, 'pageFollowButton'), 11, 1);
+        add_filter('subscribe_button', array($this, 'pageFollowButton'), 11, 1);
+
     }
 
     /**
@@ -112,27 +113,27 @@ class Follow
     }
 
     /**
-     * Filter for adding accessibility items
-     * @param  array $items Default item array
-     * @return array        Modified item array
+     * Filter for adding subscribe button on pages and archives
+     * @param  array $item Default string
+     * @return array        Modified item string
      */
-    public function pageFollowButton($items)
+    public function pageFollowButton($item)
     {
         global $post;
         $queriedObject = get_queried_object();
         $postType = is_archive() ? $queriedObject->name : get_post_type($post);
 
         // Bail if user is not logged in or notifications is not activated or is front page
-        if (!(is_page() || (is_archive() && !in_the_loop())) || !is_user_logged_in() || !App::isActivated($postType) ||is_front_page()) {
-            return $items;
+        if (!(is_page() || (is_archive() && !in_the_loop())) || !is_user_logged_in() || !App::isActivated($postType) ) {
+            return $item;
         }
 
         $user = wp_get_current_user();
         $followers = is_archive() ? get_option($postType . '_archive_followers') : get_post_meta($post->ID, 'post_followers', true);
         $isFollowing = (is_array($followers) && in_array($user->ID, array_keys(array_filter($followers)))) ? 1 : 0;
 
-        $items[] = '<span><a href="#" class="follow-button ' . ($isFollowing ? 'follow-button--following' : '') . ' " data-is-archive="' . is_archive() . '" data-post-type="' . $postType . '" data-post-id="' . $post->ID . '"><i class="pricon ' . ($isFollowing ? 'pricon-star' : 'pricon-star-o') . '"></i> <span class="follow-button__text">' . ($isFollowing ? __('Unfollow', 'notification-center') : __('Follow', 'notification-center')) . '</span></a></span>';
+        $item = '<span><a href="#" class="follow-button ' . ($isFollowing ? 'follow-button--following' : '') . ' " data-is-archive="' . is_archive() . '" data-post-type="' . $postType . '" data-post-id="' . $post->ID . '"><i class="pricon ' . ($isFollowing ? 'pricon-star' : 'pricon-star-o') . '"></i> <span class="follow-button__text">' . ($isFollowing ? __('Unsubscribe', 'notification-center') : __('Subscribe', 'notification-center')) . '</span></a></span>';
 
-        return $items;
+        return $item;
     }
 }
