@@ -109,7 +109,7 @@ class Follow
         $user = wp_get_current_user();
         $followers = get_post_meta($post->ID, 'post_followers', true);
         $isFollowing = (is_array($followers) && in_array($user->ID, array_keys(array_filter($followers)))) ? 1 : 0;
-        echo '<li><a href="#" class="follow-button ' . ($isFollowing ? 'follow-button--following' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isFollowing ? 'pricon-star' : 'pricon-star-o') . '"></i> <span class="follow-button__text">' . ($isFollowing ? __('Unfollow', 'notification-center') : __('Follow', 'notification-center')) . '</span></a></li>';
+        echo '<li><a href="#" class="follow-button ' . ($isFollowing ? 'follow-button--following' : '') . ' " data-post-id="' . $post->ID . '"><i class="pricon ' . ($isFollowing ? 'pricon-star' : 'pricon-star-o') . '"></i> <span class="follow-button__text">' . ($isFollowing ? __('Unsubscribe', 'notification-center') : __('Subscribe', 'notification-center')) . '</span></a></li>';
     }
 
     /**
