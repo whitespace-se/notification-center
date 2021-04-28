@@ -51,8 +51,8 @@ class App
     {
         wp_enqueue_script('notification-center', NOTIFICATIONCENTER_URL . '/dist/' . Helper\CacheBust::name('js/notification-center.js'), 'jquery', false, true);
         wp_localize_script('notification-center', 'notificationCenter', array(
-            'follow' => __('Follow', 'notification-center'),
-            'unfollow' => __('Unfollow', 'notification-center'),
+            'follow' => __('Suscribe', 'notification-center'),
+            'unfollow' => __('Unsubscribe', 'notification-center'),
         ));
         wp_enqueue_script('notification-center');
     }

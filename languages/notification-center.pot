@@ -1,25 +1,26 @@
+#, fuzzy
 msgid ""
 msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Notification Center\n"
-"POT-Creation-Date: 2021-04-28 10:30+0200\n"
-"PO-Revision-Date: 2021-04-28 10:31+0200\n"
+"POT-Creation-Date: 2021-04-28 10:29+0200\n"
+"PO-Revision-Date: 2021-04-28 10:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: notification-center.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
 
 #: acf-fields/php/notification_options.php:6
 msgid "Notification center"
@@ -27,39 +28,37 @@ msgstr ""
 
 #: acf-fields/php/notification_options.php:10
 msgid "Daily email summary"
-msgstr "Dagligt e-postutskick"
+msgstr ""
 
 #: acf-fields/php/notification_options.php:21
 msgid "Send daily email summary"
-msgstr "Skicka daglig sammanställning av aviseringar som e-post"
+msgstr ""
 
 #: acf-fields/php/notification_options.php:29
 msgid "Email subject"
-msgstr "Ämnesrad för e-post"
+msgstr ""
 
 #: acf-fields/php/notification_options.php:32
 #: acf-fields/php/notification_options.php:86
 #: acf-fields/php/notification_options.php:113
 msgid "Leave empty to use default."
-msgstr "Lämna tomt för att använda standardinställning."
+msgstr ""
 
 #: acf-fields/php/notification_options.php:56
 msgid "Heading"
-msgstr "Rubrik"
+msgstr ""
 
 #: acf-fields/php/notification_options.php:59
 msgid "Heading used in email. Leave empty to use default."
 msgstr ""
-"Rubrik som används i e-postmeddelandet. Lämna tomt för att använda "
-"standardinställning."
 
 #: acf-fields/php/notification_options.php:83
 msgid "Sender name"
-msgstr "Avsändarnamn"
+msgstr ""
 
 #: acf-fields/php/notification_options.php:110
 msgid "Sender email address"
-msgstr "Avsändarens e-postadress"
+msgstr ""
 
 #: source/php/Admin/Options.php:11
 msgctxt "Notification center"
@@ -69,7 +68,7 @@ msgstr ""
 #: source/php/Admin/Options.php:12
 msgctxt "Notification center"
 msgid "Notifications"
-msgstr "Aviseringar"
+msgstr ""
 
 #: source/php/App.php:54
 msgid "Suscribe"
@@ -77,86 +76,86 @@ msgstr ""
 
 #: source/php/App.php:55 source/php/Follow.php:135
 msgid "Unsubscribe"
-msgstr "Avprenumerera"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:9 source/php/Config/EntityTypes.php:17
 #: source/php/Config/EntityTypes.php:25 source/php/Config/EntityTypes.php:33
 #: source/php/Config/EntityTypes.php:65
 msgid "Comment"
-msgstr "Kommentar"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:12
 msgid "commented on your post"
-msgstr "kommenterade din sida"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:13
 msgid "new comments on your post"
-msgstr "nya kommentarer på din sida"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:20
 msgid "replied to your comment on"
-msgstr "svarade på din kommentar på"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:21
 msgid "new comment replies on"
-msgstr "nya svar på din kommentar på"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:28
 msgid "also replied to a comment on"
-msgstr "svarade också på en kommentar på"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:29
 msgid "new comment thread contributions on"
-msgstr "nya svar i kommentarstråden på"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:36
 msgid "commented on a post you follow"
-msgstr "kommenterade en sida du följer"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:37
 msgid "new comments on your followed post"
-msgstr "nya kommentarer på en sida du följer"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:41 source/php/Config/EntityTypes.php:49
 #: source/php/Config/EntityTypes.php:57
 msgid "Post"
-msgstr "Inlägg"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:44
 msgid "updated a post you follow"
-msgstr "uppdaterade en sida du följer"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:45
 msgid "new updates on your followed post"
-msgstr "nya uppdateringar på en sida du följer"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:52
 msgid "created"
-msgstr "skapade"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:60
 msgid "mentioned you in"
-msgstr "har nämnt dig i"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:61 source/php/Config/EntityTypes.php:69
 msgid "persons mentioned you in"
-msgstr "personer har nämnt dig i"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:68
 msgid "mentioned you in a comment"
-msgstr "har nämnt dig i en kommentar"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:73
 msgid "Forum"
-msgstr "Forum"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:76
 msgid "invited you to the forum"
-msgstr "har bjudit in dig att gå med i diskussionsforumet"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:77
 msgid "persons invited you to the forum"
-msgstr "personer har bjudit in dig att gå med i diskussionsforumet"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:81
 msgid "Like"
@@ -164,67 +163,67 @@ msgstr ""
 
 #: source/php/Config/EntityTypes.php:84
 msgid "liked your comment on"
-msgstr "gillade din kommentar på"
+msgstr ""
 
 #: source/php/Config/EntityTypes.php:85
 msgid "persons liked your comment on"
-msgstr "personer gillade din kommentar på"
+msgstr ""
 
 #: source/php/Follow.php:112
 msgid "Unfollow"
-msgstr "Sluta följ"
+msgstr ""
 
 #: source/php/Follow.php:112
 msgid "Follow"
-msgstr "Följ"
+msgstr ""
 
 #: source/php/Follow.php:135
 msgid "Subscribe"
-msgstr "Prenumerera"
+msgstr ""
 
 #: source/php/Helper/Message.php:51
 msgid "a post type you follow"
-msgstr "en posttyp du följer"
+msgstr ""
 
 #: source/php/Helper/Message.php:57
 msgid "in"
-msgstr "i"
+msgstr ""
 
 #: source/php/Helper/Message.php:126
 msgid "Someone"
-msgstr "Någon"
+msgstr ""
 
 #: source/php/Summary.php:79
 msgid "Your latest notifications"
-msgstr "Dina senaste aviseringar"
+msgstr ""
 
 #: source/php/Summary.php:80
 msgid "This message was sent via"
-msgstr "Meddelandet skickades via"
+msgstr ""
 
 #: source/php/Summary.php:89
 msgid "New notifications"
-msgstr "Nya aviseringar"
+msgstr ""
 
 #: views/dropdown.blade.php:9
 msgid "Notifications"
-msgstr "Aviseringar"
+msgstr ""
 
 #: views/dropdown.blade.php:13
 msgid "Mark all as read"
-msgstr "﻿Markera alla som lästa"
+msgstr ""
 
 #: views/dropdown.blade.php:26
 msgid "You don't have any notifications"
-msgstr "Du har inga aviseringar"
+msgstr ""
 
 #: views/email-summary.blade.php:11
 msgid "Show"
-msgstr "Visa"
+msgstr ""
 
 #: views/partials/dropdown-items.blade.php:13
 msgid "ago"
-msgstr "sedan"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "Notification Center"
@@ -247,24 +246,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "(#plugin_author_url#)"
 msgstr ""
-
-#~ msgid "new mentions in"
-#~ msgstr "personer har nämnt dig i"
-
-#~ msgid "created a new post in"
-#~ msgstr "skapade ett nytt inlägg i"
-
-#~ msgid "new posts was created in"
-#~ msgstr "nya inlägg har skapats i"
-
-#~ msgid "Page"
-#~ msgstr "Sida"
-
-#~ msgid "Following"
-#~ msgstr "Följer"
-
-#~ msgid "Enable follow functionality for selected post types."
-#~ msgstr "Aktivera följ-funktionalitet för utvalda posttyper."
-
-#~ msgid "Update"
-#~ msgstr "Uppdatering"
