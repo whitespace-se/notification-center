@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Notification Center\n"
-"POT-Creation-Date: 2021-04-28 10:30+0200\n"
-"PO-Revision-Date: 2021-04-28 10:31+0200\n"
+"POT-Creation-Date: 2021-04-28 10:40+0200\n"
+"PO-Revision-Date: 2021-04-28 10:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -71,9 +71,9 @@ msgctxt "Notification center"
 msgid "Notifications"
 msgstr "Aviseringar"
 
-#: source/php/App.php:54
-msgid "Suscribe"
-msgstr ""
+#: source/php/App.php:54 source/php/Follow.php:135
+msgid "Subscribe"
+msgstr "Prenumerera"
 
 #: source/php/App.php:55 source/php/Follow.php:135
 msgid "Unsubscribe"
@@ -177,10 +177,6 @@ msgstr "Sluta följ"
 #: source/php/Follow.php:112
 msgid "Follow"
 msgstr "Följ"
-
-#: source/php/Follow.php:135
-msgid "Subscribe"
-msgstr "Prenumerera"
 
 #: source/php/Helper/Message.php:51
 msgid "a post type you follow"
