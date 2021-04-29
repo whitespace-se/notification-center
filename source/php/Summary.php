@@ -12,7 +12,9 @@ class Summary
 
     public static function addCronJob()
     {
-        wp_schedule_event(strtotime('tomorrow +15 hours'), 'daily', 'email_notification_summary');
+        if ( !wp_next_scheduled( 'email_notification_summary' ) ) {
+            wp_schedule_event(strtotime('tomorrow +15 hours'), 'daily', 'email_notification_summary');
+        }
     }
 
     public static function removeCronJob()
