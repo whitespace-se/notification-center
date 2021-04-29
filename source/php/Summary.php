@@ -34,20 +34,21 @@ class Summary
         global $wpdb;
         $notifiedUsers = array();
 
+
         // Get notifiers
         $notifiers = $wpdb->get_results("
-            SELECT u.ID, u.user_email, u.user_login
-            FROM {$wpdb->users} u
-            JOIN {$wpdb->prefix}notifications n
-                ON n.notifier_id = u.ID
-            JOIN {$wpdb->prefix}notification_objects no
-                ON no.ID = n.notification_object_id
-            WHERE no.created BETWEEN NOW() - INTERVAL 48 HOUR AND NOW() - INTERVAL 24 HOUR
-                AND n.status = 0
-            GROUP BY u.ID
+        SELECT u.ID, u.user_email, u.user_login
+        FROM {$wpdb->users} u
+        JOIN {$wpdb->prefix}notifications n
+        ON n.notifier_id = u.ID
+        JOIN {$wpdb->prefix}notification_objects no
+        ON no.ID = n.notification_object_id
+        WHERE no.created  >= now() - INTERVAL 24 HOUR
+        AND n.status = 0
+        GROUP BY u.ID
         ");
 
-        foreach ($notifiers as $key => $notifier) {
+        foreach ($notifiers as $notifier) {
             // Skip if user have disabled emails
             $disabled = get_user_meta($notifier->ID, 'disable_notification_email', true);
             if ($disabled == true || in_array($notifier->user_login, $notifiedUsers)) {
@@ -56,19 +57,19 @@ class Summary
 
             // Get users notifications
             $notifications = $wpdb->get_results("
-                SELECT *, COUNT(*) count
-                FROM {$wpdb->prefix}notifications n
-                INNER JOIN {$wpdb->prefix}notification_objects no
-                    ON n.notification_object_id = no.ID
-                WHERE n.notifier_id = {$notifier->ID}
-                    AND n.status = 0
-                    AND no.created BETWEEN NOW() - INTERVAL 48 HOUR AND NOW()
-                GROUP BY CASE
-                            WHEN no.post_id IS NOT NULL
-                            THEN 1
-                            ELSE 0
-                        END, no.post_id, no.entity_type, no.blog_id, n.status
-                ORDER BY no.created DESC
+            SELECT *, COUNT(*) count
+            FROM {$wpdb->prefix}notifications n
+            INNER JOIN {$wpdb->prefix}notification_objects no
+                ON n.notification_object_id = no.ID
+            WHERE n.notifier_id = {$notifier->ID}
+                AND n.status = 0
+                AND no.created BETWEEN NOW() - INTERVAL 24 HOUR AND NOW()
+            GROUP BY CASE
+                        WHEN no.post_id IS NOT NULL
+                        THEN 1
+                        ELSE 0
+                    END, no.post_id, no.entity_type, no.blog_id, n.status
+            ORDER BY no.created DESC
             ");
 
             if (empty($notifications)) {
@@ -88,7 +89,8 @@ class Summary
             $senderName = (!empty(get_field('notification_sender_name', 'option'))) ? get_field('notification_sender_name', 'option') : get_bloginfo();
             $subject = (!empty(get_field('notification_email_subject', 'option'))) ? get_field('notification_email_subject', 'option') : __('New notifications', 'notification-center');
 
-            $mail = wp_mail(
+            
+            wp_mail(
                 $notifier->user_email,
                 $subject,
                 $emailTemplate,
@@ -97,6 +99,7 @@ class Summary
                     'Content-Type: text/html; charset=UTF-8'
                 )
             );
+            
             // Save user to array to avoid sending duplicate emails
             $notifiedUsers[] = $notifier->user_login;
         }
